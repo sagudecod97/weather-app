@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'Open-Sans-Regular'; /* How it's going to be called in the project */
+	src: url('../assets/fonts/open-sans-v35-latin-regular.woff2') format('woff2'),
+		url('../assets/fonts/open-sans-v35-latin-regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open-Sans-Medium'; /* How it's going to be called in the project */
+	src: url('../assets/fonts/open-sans-v35-latin-600.woff2') format('woff2'),
+		url('../assets/fonts/open-sans-v35-latin-600.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open-Sans-Bold'; /* How it's going to be called in the project */
+	src: url('../assets/fonts/open-sans-v35-latin-800.woff2') format('woff2'),
+		url('../assets/fonts/open-sans-v35-latin-800.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+}
+
+body {
+	box-sizing: content-box;
+	font-family: 'Open-Sans-Regular';
+}
