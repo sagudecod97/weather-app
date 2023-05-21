@@ -2,8 +2,6 @@ const path = require('path'); // Element from Node
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const CSSMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -12,8 +10,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name][contenthash].js', // The name of the output file
-    //assetModuleFilename: 'assets/images/[hash][ext][query]'
+    assetModuleFilename: 'assets/images/[hash][ext][query]'
   },
+  mode: 'development',
+  watch: true,
   resolve: {
     extensions: ['.js'],
   },
@@ -30,7 +30,8 @@ module.exports = {
         test: /\.css|.styl$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader', 
+          'css-loader',
+          //'stylus-loader', 
         ]
       },
       {
@@ -64,11 +65,4 @@ module.exports = {
     new Dotenv(),
     new CleanWebpackPlugin(),
   ],
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new CSSMinimizerPlugin(), // CSS Optimization
-      new TerserPlugin(), // JavaScript Optimization
-    ]
-  },
 }; // This is the configuration object
