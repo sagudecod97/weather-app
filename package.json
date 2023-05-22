@@ -47,6 +47,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-minimizer-webpack-plugin": "^5.0.0",
     "D": "^1.0.0",
+    "luxon": "^3.3.0",
     "mini-css-extract-plugin": "^2.7.5",
     "terser-webpack-plugin": "^5.3.8"
   }

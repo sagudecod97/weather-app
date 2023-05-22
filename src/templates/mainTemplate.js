@@ -6,8 +6,6 @@ import Wind from '../assets/images/wind.svg';
 
 import Sun from '../assets/images/sun.svg';
 
-import getCurrentDateString from '../utils/currentDateString';
-
 const MainTemplate = `
 <div class="weather__container">
   <div class="location">
@@ -20,7 +18,7 @@ const MainTemplate = `
     </p>
 
     <p class="location__date">
-      ${getCurrentDateString()}
+      Monday, 1 January 9:00
     </p>
   </div>
 
