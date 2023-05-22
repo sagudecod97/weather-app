@@ -1,0 +1,151 @@
+.weather__container {
+  padding-bottom: 50px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.location {
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20%;
+  flex-wrap: wrap;
+}
+
+.location__icon {
+  width: 25px;
+  height: 25px;
+}
+
+.location__icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.location__title {
+  padding-left: 8px;
+  font-family: 'Open-Sans-Bold';
+  font-size: 24px;
+  color: #3b4abf;
+}
+
+.location__date {
+  padding-top: 5px;
+  color: #3b4abf;
+}
+
+.degrees-container {
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.degrees-container__degrees {
+  font-family: 'Open-Sans-Bold';
+  font-size: 88px;
+  line-height: 1;
+  color: #5465ff;
+}
+
+.degrees-container__state {
+  font-family: 'Open-Sans-Medium';
+  color: #5465ff;
+}
+
+.stats {
+  background-color: orange;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 35px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statistics__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.statistics__icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.statistics__percentage {
+  font-family: 'Open-Sans-Medium';
+  color: #3b4abf;
+}
+
+.statistics__title {
+  font-size: 14px;
+  color: #5465ff;
+}
+
+.forecast {
+  padding: 20px 0 0 20px;
+}
+
+.forecast__title {
+  font-family: 'Open-Sans-Medium';
+  color: #3b4abf;
+  margin-bottom: 15px;
+}
+
+.forecast__list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: scroll;
+  padding: 14px 30px 14px 0;
+}
+
+.forecast-item {
+  height: 180px;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 30px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.forecast-item--current-day {
+  background-color: rgba(84, 101, 255, 0.5);
+}
+
+.forecast-item__day {
+  font-family: 'Open-Sans-Medium';
+  padding-bottom: 20%;
+}
+
+.forecast-item__icon {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 50%;
+}
+
+.forecast-item__icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.forecast-item p:nth-child(3) {
+  padding: 15%;
+}

@@ -1,3 +1,5 @@
+@import url('../styles/reset.css');
+
 @font-face {
 	font-family: 'Open-Sans-Regular'; /* How it's going to be called in the project */
 	src: url('../assets/fonts/open-sans-v35-latin-regular.woff2') format('woff2'),
@@ -22,7 +24,21 @@
 	font-style: normal;
 }
 
+html {
+	width: 100%;
+	height: 100%;
+}
+
 body {
+	width: 100%;
+	height: 100%;
 	box-sizing: content-box;
 	font-family: 'Open-Sans-Regular';
+	background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(84, 101, 255, 0.4));
+	background-repeat: no-repeat;
+}
+
+#app {
+	width: 100%;
+	height: 100%;
 }
