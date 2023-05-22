@@ -1,6 +1,7 @@
 import './js/main.js';
 import './styles/main.css';
 
+import MainTemplate from './templates/mainTemplate.js';
+
 const app = document.getElementById('app');
-console.log(app);
-app.innerHTML = '<h1>Welcome to My Weather App!</h1>';
+app.innerHTML = MainTemplate;
