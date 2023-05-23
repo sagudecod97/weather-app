@@ -1,6 +1,6 @@
-import getCurrentDateString from '../utils/currentDateString';
+// import getCurrentDateString from '../utils/currentDateString';
 import getUserLocation from '../utils/userLocation';
-import getUserCityName from '../utils/userCityName';
+
 
 window.addEventListener('load', () => {
   const locationTimeNode = document.querySelector('.location__date');
