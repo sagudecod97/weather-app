@@ -1,4 +1,5 @@
 @import url('../styles/reset.css');
+@import url('../styles/variables.css');
 
 @font-face {
 	font-family: 'Open-Sans-Regular'; /* How it's going to be called in the project */

@@ -13,12 +13,11 @@ const getUserLocation = () => {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         try {
-          console.log("Entered geolocation");
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
           const userCityName = await getUserCityName(latitude, longitude);
 
-          getCurrentWeather(latitude, longitude, userCityName);
+          // getCurrentWeather(latitude, longitude, userCityName);
 
           window.userLatitude = latitude;
           window.userLongitude = longitude;
@@ -30,7 +29,7 @@ const getUserLocation = () => {
       },
       (error) => {
         console.error('Error getting geolocation:', error);
-        getCurrentWeather();
+        // getCurrentWeather();
         closeWaitLocationModal();
       }
     );
