@@ -17,8 +17,9 @@ const getUserCityName = async (latitude, longitude) => {
       for (const component of addressComponents) {
         if (component.types.includes('locality')) {
           const cityName = component.long_name;
-          
           locationTitle.innerHTML = cityName;
+
+          return cityName;
         }
       }
     }

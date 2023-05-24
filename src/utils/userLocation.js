@@ -1,4 +1,5 @@
 import getUserCityName from "./userCityName";
+import getCurrentWeather from "./currentWeather";
 
 const getUserLocation = () => {
   const waitLocationModal = document.querySelector('.wait-location');
@@ -10,19 +11,26 @@ const getUserLocation = () => {
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
+      async (position) => {
+        try {
+          console.log("Entered geolocation");
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          const userCityName = await getUserCityName(latitude, longitude);
 
-        getUserCityName(latitude, longitude);
+          getCurrentWeather(latitude, longitude, userCityName);
 
-        window.userLatitude = latitude;
-        window.userLongitude = longitude;
+          window.userLatitude = latitude;
+          window.userLongitude = longitude;
 
-        closeWaitLocationModal();
+          closeWaitLocationModal();
+        } catch(err) {
+          console.log('Error while waiting for city name');
+        }
       },
       (error) => {
         console.error('Error getting geolocation:', error);
+        getCurrentWeather();
         closeWaitLocationModal();
       }
     );
