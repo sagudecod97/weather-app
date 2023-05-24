@@ -1,0 +1,19 @@
+/* Bootstrap breakpoint */
+
+/*
+  Extra small devices (xs)
+  Small devices (sm)
+  Medium devices (md)
+  Medium large devices (ms)
+  Large devices (lg)
+  Extra large devices (xl)
+*/
+
+:root {
+  --breakpoint-xs: 0; 
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-ml: 820px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
