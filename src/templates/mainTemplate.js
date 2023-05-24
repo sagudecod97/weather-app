@@ -7,6 +7,9 @@ import Wind from '../assets/images/wind.svg';
 import Sun from '../assets/images/sun.svg';
 
 const MainTemplate = `
+<div class="wait-location wait-location--active">
+</div>
+
 <div class="weather__container">
   <div class="location">
     <div class="location__icon">
