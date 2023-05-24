@@ -42,8 +42,8 @@ const MainTemplate = `
         <img src="${Umbrella}" alt="Umbrella"/>
       </div>
 
-      <p class="statistics__percentage">
-        30&percnt;
+      <p class="statistics__percentage" id="precipitation">
+        30 mm
       </p>
 
       <p class="statistics__title">
@@ -53,10 +53,10 @@ const MainTemplate = `
 
     <div class="statistics">
       <div class="statistics__icon">
-        <img src="${Raindrops}" alt="Umbrella"/>
+        <img src="${Raindrops}" alt="rain drops"/>
       </div>
 
-      <p class="statistics__percentage">
+      <p class="statistics__percentage" id="humidity">
         20&percnt;
       </p>
 
@@ -67,15 +67,15 @@ const MainTemplate = `
 
     <div class="statistics">
       <div class="statistics__icon">
-        <img src="${Wind}" alt="Umbrella"/>
+        <img src="${Wind}" alt="Wind"/>
       </div>
 
-      <p class="statistics__percentage">
+      <p class="statistics__percentage" id="wind">
         12 km/h
       </p>
 
       <p class="statistics__title">
-        Precipitation
+        Wind
       </p>
     </div>
   </div>
