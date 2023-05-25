@@ -2,12 +2,16 @@ import '../styles/mainTemplate.css';
 import Location from '../assets/images/location.svg';
 import Umbrella from '../assets/images/umbrella.svg';
 import Raindrops from '../assets/images/raindrops.svg';
+import Search from '../assets/images/search.svg';
 import Wind from '../assets/images/wind.svg';
 
 import Sun from '../assets/images/sun.svg';
 
 const MainTemplate = `
 <div class="wait-location wait-location--active">
+</div>
+
+<div class="search-modal search-modal--hide">
 </div>
 
 <div class="weather__container">
@@ -79,6 +83,12 @@ const MainTemplate = `
       </p>
     </div>
   </div>
+
+  <button class="search-btn">
+    <div class="search-btn__icon">
+      <img src="${Search}" alt="Search city"/>
+    </div>
+  </button>
 </div>
 
 <div class="forecast">
