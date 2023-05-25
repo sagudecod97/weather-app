@@ -1,7 +1,5 @@
 import getIconWeather from './iconWeather';
 
-import Sun from '../assets/images/sun.svg';
-
 const getDaysWeatherForecast = async (latitude = null, longitude = null) => {
   const API_URL = process.env.API_WEATHER;
   const API_KEY = process.env.API_KEY_WEATHER;
