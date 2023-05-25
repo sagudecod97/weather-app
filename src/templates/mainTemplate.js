@@ -83,47 +83,11 @@ const MainTemplate = `
 
 <div class="forecast">
   <p class="forecast__title">
-    8-Day Forescasts
+    5-Days Forescasts
   </p>
 
   <div class="forecast__list">
     <div class="forecast-item forecast-item--current-day">
-      <p class="forecast-item__day">
-        Mon
-      </p>
-
-      <div class="forecast-item__icon">
-        <img src=${Sun} alt="forecast icon" />
-      </div>
-
-      <p class="forecast-item__degree">
-        22&deg;
-      </p>
-
-      <p class="forecast-item__degree">
-        16&deg;
-      </p>
-    </div>
-
-    <div class="forecast-item">
-      <p class="forecast-item__day">
-        Mon
-      </p>
-
-      <div class="forecast-item__icon">
-        <img src=${Sun} alt="forecast icon" />
-      </div>
-
-      <p class="forecast-item__degree">
-        22&deg;
-      </p>
-
-      <p class="forecast-item__degree">
-        16&deg;
-      </p>
-    </div>
-
-    <div class="forecast-item">
       <p class="forecast-item__day">
         Mon
       </p>

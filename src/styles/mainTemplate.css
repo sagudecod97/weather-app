@@ -158,9 +158,7 @@
     width: 50%;
     gap: 20px;
   }
-}
 
-@media (min-width: 820px) {
   .forecast {
     padding-left: 0px;
     display: flex;
@@ -171,15 +169,19 @@
 
   .forecast__title {
     width: 100%;
-    max-width: 770px;
+    max-width: 530px;
   }
 
   .forecast__list {
     overflow: unset;
-    max-width: 770px;
+    max-width: 530px;
     padding-right: 0px;
     justify-content: center;
   }
+}
+
+@media (min-width: 820px) {
+
 }
 
 @media (min-width: 992px) {

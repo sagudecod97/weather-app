@@ -13,6 +13,8 @@ const getCurrentWeather = async (latitude = null, longitude = null, name = null)
   const lon = longitude ? longitude : mayorCity.longitude
   const cityName = name ? name : mayorCity.name;
 
+  window.defaultCity = mayorCity;
+
   const locationTitle = document.querySelector('.location__title');
   const currentDegrees = document.querySelector('.degrees-container__degrees');
   const currentWeatherState = document.querySelector('.degrees-container__state');
