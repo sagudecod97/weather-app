@@ -3,7 +3,6 @@ import Location from '../assets/images/location.svg';
 import Umbrella from '../assets/images/umbrella.svg';
 import Raindrops from '../assets/images/raindrops.svg';
 import Search from '../assets/images/search.svg';
-import Close from '../assets/images/circle-xmark.svg';
 import Wind from '../assets/images/wind.svg';
 
 import Sun from '../assets/images/sun.svg';
@@ -13,28 +12,6 @@ const MainTemplate = `
 </div>
 
 <div class="search-modal search-modal--hide">
-  <div class="modal">
-    <div class="icons">
-      <div class="icons__icon icons__icon--search">
-        <img src="${Search}" alt="location">
-      </div>
-
-      <div class="icons__icon icons__icon--close">
-        <img src="${Close}" alt="location">
-      </div>
-    </div>
-
-    <p class="modal__search">
-      Stay in the know with any city's weather
-    </p>
-
-    <div class="search">
-      <input class="search__input" type="text" placeholder="City's name"/>
-      <button class="serch__button">
-        Search
-      </button>
-    </div>
-  </div>
 </div>
 
 <div class="weather__container">
@@ -106,6 +83,12 @@ const MainTemplate = `
       </p>
     </div>
   </div>
+
+  <button class="search-btn">
+    <div class="search-btn__icon">
+      <img src="${Search}" alt="Search city"/>
+    </div>
+  </button>
 </div>
 
 <div class="forecast">
