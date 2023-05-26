@@ -23,7 +23,7 @@ async function getCurrentDateString(city, latitude = null, longitude = null ) {
 
 
     const responseTimezone = await fetch(
-      `${API_URL_TIMEZONE}/v2.1/get-time-zone?key=${API_KEY_TIMEZONE}&format=json&by=position&lat=${latitudeCity}&lng=${latitudeCity}`
+      `${API_URL_TIMEZONE}/v2.1/get-time-zone?key=${API_KEY_TIMEZONE}&format=json&by=position&lat=${latitudeCity}&lng=${longitudeCity}`
     );
     const dataTimezone = await responseTimezone.json();
   

@@ -1,9 +1,11 @@
 import getUserCityName from "./userCityName";
 import getCurrentWeather from "./currentWeather";
 import getDaysWeatherForecast from "./daysWeatherForecast";
+import getCurrentDateString from "./currentDateString";
 
 const getUserLocation = () => {
   const waitLocationModal = document.querySelector('.wait-location');
+  const locationTimeNode = document.querySelector('.location__date');
 
   const closeWaitLocationModal = () => {
     waitLocationModal.classList.remove('wait-location--active');
@@ -21,6 +23,9 @@ const getUserLocation = () => {
           getCurrentWeather(latitude, longitude, userCityName);
           getDaysWeatherForecast(latitude, longitude);
 
+          const dateString = await getCurrentDateString(false, latitude, longitude);
+          locationTimeNode.innerHTML = dateString;
+
           window.userLatitude = latitude;
           window.userLongitude = longitude;
 
@@ -29,11 +34,18 @@ const getUserLocation = () => {
           console.log('Error while waiting for city name');
         }
       },
-      (error) => {
-        console.error('Error getting geolocation:', error);
-        getCurrentWeather();
-        getDaysWeatherForecast();
-        closeWaitLocationModal();
+      async (error) => {
+        try {
+          console.error('Error getting geolocation:', error);
+          getCurrentWeather();
+          getDaysWeatherForecast();
+          closeWaitLocationModal();
+          
+          const dateString = await getCurrentDateString(window.defaultCity.name);
+          locationTimeNode.innerHTML = dateString;
+        } catch(err) {
+          console.log('Error setting default city current date: ', err);
+        }
       }
     );
   } else {
