@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name][contenthash].js', // The name of the output file
-    //assetModuleFilename: 'assets/images/[hash][ext][query]'
+    assetModuleFilename: 'assets/images/[hash][ext][query]'
   },
   resolve: {
     extensions: ['.js'],
@@ -59,6 +59,10 @@ module.exports = {
       patterns: [{
         from: path.resolve(__dirname, './src/assets/images'), // Source of the elements
         to: 'assets/images', // Where to ouput the elements
+      },
+      {
+        from: './site.webmanifest',
+        to: './site.webmanifest',
       }]
     }),
     new Dotenv(),
