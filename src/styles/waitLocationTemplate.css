@@ -1,3 +1,5 @@
+@import url('./variables.css');
+
 .wait-location {
   position: absolute;
   top: 0;
@@ -77,4 +79,10 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .wait-location__info, .wait-location__notation{
+    max-width: 500px;
+  }
 }
