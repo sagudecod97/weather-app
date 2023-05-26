@@ -60,6 +60,10 @@ module.exports = {
       patterns: [{
         from: path.resolve(__dirname, './src/assets/images'), // Source of the elements
         to: 'assets/images', // Where to ouput the elements
+      },
+      {
+        from: './site.webmanifest',
+        to: './site.webmanifest',
       }]
     }),
     new Dotenv(),
