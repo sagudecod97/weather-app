@@ -4,15 +4,26 @@ const API_URL_WEATHER = process.env.API_WEATHER;
 const API_KEY_TIMEZONE = process.env.API_KEY_TIMEZONE;
 const API_URL_TIMEZONE = process.env.API_TIMEZONE;
 
-async function getCurrentDateString(city) {
+async function getCurrentDateString(city, latitude = null, longitude = null ) {
   try {
-    const responseCityInfo = await fetch(`${API_URL_WEATHER}/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY_WEATHER}`);
-    const dataCityInfo = await responseCityInfo.json();
+    let responseCityInfo;
+    let dataCityInfo;
+    let latitudeCity = latitude;
+    let longitudeCity = longitude;
 
-    const { lat, lon } = dataCityInfo[0];
+    if (city) {
+      responseCityInfo = await fetch(`${API_URL_WEATHER}/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY_WEATHER}`);
+      dataCityInfo = await responseCityInfo.json();
+    }
+
+    if (!latitude || !longitude) {
+      latitudeCity = dataCityInfo[0].lat;
+      longitudeCity = dataCityInfo[0].lon;
+    }
+
 
     const responseTimezone = await fetch(
-      `${API_URL_TIMEZONE}/v2.1/get-time-zone?key=${API_KEY_TIMEZONE}&format=json&by=position&lat=${lat}&lng=${lon}`
+      `${API_URL_TIMEZONE}/v2.1/get-time-zone?key=${API_KEY_TIMEZONE}&format=json&by=position&lat=${latitudeCity}&lng=${latitudeCity}`
     );
     const dataTimezone = await responseTimezone.json();
   

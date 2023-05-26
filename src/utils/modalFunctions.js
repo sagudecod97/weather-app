@@ -1,3 +1,6 @@
+import normalizeString from "./normalizeString";
+import getUserInputCity from "./userInputCity";
+
 const openSearchModal = () => {
   const searchModalNode = document.querySelector('.search-modal');
 
@@ -5,25 +8,36 @@ const openSearchModal = () => {
   searchModalNode.classList.add('search-modal--show');
 };
 
-const closeSearchModal = (event) => {
+const closeSearchModal = () => {
   const searchModalNode = document.querySelector('.search-modal');
+
+  searchModalNode.classList.remove('search-modal--show');
+  searchModalNode.classList.add('search-modal--hide');
+};
+
+const modalEvents = (event) => {
+  const searchInputNode = document.querySelector('.search__input');
   const { classList } = event.srcElement;
   const classListArray = [...classList];
 
  if (classListArray.includes('search-modal') ||
     classListArray.includes('icons__icon--close')
  ) {
-  searchModalNode.classList.remove('search-modal--show');
-  searchModalNode.classList.add('search-modal--hide');
+  closeSearchModal();
  }
 
  if (classListArray.includes('search__button')) {
   event.preventDefault();
- }
 
+  let userInput = searchInputNode.value.toLowerCase();
+  userInput = normalizeString(userInput);
+
+  getUserInputCity(userInput);
+  closeSearchModal();
+ }
 };
 
 export {
   openSearchModal,
-  closeSearchModal,
+  modalEvents,
 };

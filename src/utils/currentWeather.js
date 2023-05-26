@@ -32,6 +32,8 @@ const getCurrentWeather = async (latitude = null, longitude = null, name = null)
     currentWind.innerHTML = `${Math.ceil(transformMetersToKm(responseData.wind.speed))} Km/h`;
     currentPrecipitation.innerHTML = responseData.rain ? `${responseData.rain['1h']} mm` : 'Unavailable';
     currentHumidity.innerHTML = `${responseData.main.humidity}%`;
+
+    return responseData;
   } catch(err) {
     console.log('Error retrieving current weather: ', err);
   }

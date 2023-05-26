@@ -1,6 +1,6 @@
 // import getCurrentDateString from '../utils/currentDateString';
 import getUserLocation from '../utils/userLocation';
-import { openSearchModal, closeSearchModal } from '../utils/openSearchModal';
+import { openSearchModal, modalEvents } from '../utils/modalFunctions';
 
 import WaitLocationTemplate from '../templates/waitLocationTemplate';
 import SearchModalTemplate from '../templates/searchModalTemplate';
@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
   searchModalNode.innerHTML = SearchModalTemplate;
 
   searchButtonNode.addEventListener('click', openSearchModal);
-  searchModalNode.addEventListener('click', closeSearchModal);
+  searchModalNode.addEventListener('click', modalEvents);
 
   getUserLocation();
   // getCurrentDateString('Medellin')

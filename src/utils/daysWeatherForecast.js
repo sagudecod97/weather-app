@@ -49,6 +49,8 @@ const getDaysWeatherForecast = async (latitude = null, longitude = null) => {
 
     forecastList.innerHTML = '';
     forecastList.append(...forecastListItemArray);
+
+    return responseData;
   } catch(err) {
     console.error('Error getting days forecast: ', err);
   }
