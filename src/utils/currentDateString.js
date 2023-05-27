@@ -1,8 +1,4 @@
 const { DateTime } = require('luxon');
-const API_KEY_WEATHER = process.env.API_KEY_WEATHER;
-const API_URL_WEATHER = process.env.API_WEATHER;
-const API_KEY_TIMEZONE = process.env.API_KEY_TIMEZONE;
-const API_URL_TIMEZONE = process.env.API_TIMEZONE;
 
 async function getCurrentDateString(city, latitude = null, longitude = null ) {
   try {
@@ -12,7 +8,7 @@ async function getCurrentDateString(city, latitude = null, longitude = null ) {
     let longitudeCity = longitude;
 
     if (city) {
-      responseCityInfo = await fetch(`${API_URL_WEATHER}/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY_WEATHER}`);
+      responseCityInfo = await fetch(`/api/geolocation?city=${city}`);
       dataCityInfo = await responseCityInfo.json();
     }
 
@@ -22,9 +18,7 @@ async function getCurrentDateString(city, latitude = null, longitude = null ) {
     }
 
 
-    const responseTimezone = await fetch(
-      `${API_URL_TIMEZONE}/v2.1/get-time-zone?key=${API_KEY_TIMEZONE}&format=json&by=position&lat=${latitudeCity}&lng=${longitudeCity}`
-    );
+    const responseTimezone = await fetch(`/api/current/date?lat=${latitudeCity}&lon=${longitudeCity}`);
     const dataTimezone = await responseTimezone.json();
   
     const { zoneName } = dataTimezone;

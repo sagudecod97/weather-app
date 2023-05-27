@@ -5,9 +5,6 @@ import capitalizeWords from "./capitalizeWords";
 import transformMetersToKm from "./transformMeterToKm";
 
 const getCurrentWeather = async (latitude = null, longitude = null, name = null) => {
-  const URL_API = process.env.API_WEATHER;
-  const API_KEY = process.env.API_KEY_WEATHER;
-
   const mayorCity = mayorCities[getRandomIndex(mayorCities)];
   const lat = latitude ? latitude : mayorCity.latitude;
   const lon = longitude ? longitude : mayorCity.longitude
@@ -23,7 +20,7 @@ const getCurrentWeather = async (latitude = null, longitude = null, name = null)
   const currentWind = document.querySelector('#wind');
 
   try {
-    const response = await fetch(`${URL_API}/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
+    const response = await fetch(`/api/current/weather?lat=${lat}&lon=${lon}`);
     const responseData = await response.json();
 
     locationTitle.innerHTML = `${cityName}`;

@@ -1,12 +1,8 @@
 const getUserCityName = async (latitude, longitude) => {
-  const API_KEY = process.env.API_KEY_LOCATION;
-  const API_URL = process.env.API_LOCATION;
   const locationTitle = document.querySelector('.location__title');
 
-  const URL = `${API_URL}/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${API_KEY}`;
-
   try {
-    const response = await fetch(URL);
+    const response = await fetch(`/api/city?lat=${latitude}&lon=${longitude}`);
     const responseData = await response.json();
 
     const results = responseData.results;

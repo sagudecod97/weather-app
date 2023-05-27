@@ -1,9 +1,6 @@
 import getIconWeather from './iconWeather';
 
 const getDaysWeatherForecast = async (latitude = null, longitude = null) => {
-  const API_URL = process.env.API_WEATHER;
-  const API_KEY = process.env.API_KEY_WEATHER;
-
   try {
     const mayorCity = window.defaultCity;
     const lat = latitude ? latitude : mayorCity.latitude;
@@ -11,7 +8,7 @@ const getDaysWeatherForecast = async (latitude = null, longitude = null) => {
     const forecastList = document.querySelector('.forecast__list');
     const forecastListItemArray = [];
 
-    const response = await fetch(`${API_URL}/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
+    const response = await fetch(`/api/forecast?lat=${lat}&lon=${lon}`);
     const responseData = await response.json();
 
     for (let i = 0; i < 5 ; i++) {
